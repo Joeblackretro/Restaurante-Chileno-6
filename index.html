@@ -34,6 +34,7 @@
         html {
             scroll-behavior: smooth;
             /* Desplazamiento suave al hacer clic en el menú */
+            scroll-padding-top: 240px; /* Evita que el header fijo tape el contenido al navegar */
         }
 
         body {
@@ -179,31 +180,20 @@
 
         /* ===== SECCIONES PRINCIPALES ===== */
         section {
-            background-color: white;
-            /* Aplica fondo blanco a cada sección */
-            margin: 25px auto;
-            /* Agrega separación entre secciones y las centra */
-            padding: 25px;
-            /* Agrega espacio interno dentro de la sección */
-            border-radius: 14px;
-            /* Redondea los bordes de la sección */
-            width: 90%;
-            /* Mantiene ancho adaptable */
-            max-width: 1100px;
-            /* Limita el ancho máximo */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            /* Añade sombra suave */
-            scroll-margin-top: 250px;
-            /* Ajustado al nuevo tamaño más delgado de la barra superior */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Como ahora existe <main>, las secciones son divisiones internas transparentes (excepto quienes somos) */
+            margin: 40px auto;
+            /* Agrega separación vertical entre secciones */
+            padding: 0;
+            /* El padding ahora lo maneja <main> o las secciones específicas */
+            width: 100%;
+            /* Ocupan todo el ancho del main */
+            transition: transform 0.3s ease;
             /* Habilita animaciones CSS3 suaves al interactuar con el contenedor */
         }
 
         section:hover {
-            transform: translateY(-5px);
-            /* Levanta o "flota" la sección 5 píxeles hacia arriba al pasar el ratón */
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-            /* Incrementa la intensidad de la sombra creando un efecto de elevación 3D realista */
+            transform: translateY(-2px);
+            /* Levanta o "flota" la sección sutilmente al pasar el ratón */
         }
 
         /* ===== TÍTULOS ===== */
@@ -232,6 +222,8 @@
             /* Modifica el color de fondo a un tono arena/durazno muy suave */
             border-left: 5px solid #8B0000;
             /* Añade un borde a la izquierda de color rojo oscuro para destacar la sección */
+            padding: 25px;
+            border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             /* Aplica una sombra suave y difusa alrededor del contenedor */
         }
@@ -504,8 +496,11 @@
         }
 
         /* ===== DISEÑO RESPONSIVO (Media Queries) ===== */
-        /* Oportunidad de Mejora: Adaptabilidad para dispositivos móviles */
         @media screen and (max-width: 768px) {
+            html {
+                scroll-padding-top: 100px; /* Ajuste para móviles */
+            }
+
             /* 1. Desactivar el sticky header en móviles para no tapar la pantalla */
             .barra-superior {
                 position: static; 
@@ -534,11 +529,16 @@
                 font-size: 0.85rem;
             }
             
-            /* Ajustes para evitar que las secciones queden escondidas detrás de la barra pegajosa y aprovechar el espacio */
+            /* Ajustes para aprovechar el espacio */
             section {
-                scroll-margin-top: 180px; 
-                width: 95%; /* Usa casi todo el ancho de la pantalla */
-                padding: 15px 10px; /* Reduce el espacio en blanco interno (padding) para que las tablas tengan más lugar */
+                margin: 20px auto; 
+            }
+
+            main {
+                padding: 15px;
+                width: 100%;
+                box-sizing: border-box;
+                border-radius: 0;
             }
 
             /* 3. Ajustes de Formularios (Espacio y Táctil) */
@@ -569,13 +569,14 @@
 
         main {
             background-color: #ffffff; /* Background */
-            margin: 30px auto; /* Margin: Separación externa */
-            padding: 20px; /* Padding: Separación interna */
+            margin: 40px auto; /* Margin: Separación externa */
+            padding: 40px 50px; /* Padding: Separación interna amplia */
             border: 1px solid #e4e4e4; /* Border */
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            width: 95%;
-            max-width: 1150px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* Sombra elegante para toda la caja */
+            width: 90%;
+            max-width: 1100px;
+            box-sizing: border-box;
         }
 
         footer {
