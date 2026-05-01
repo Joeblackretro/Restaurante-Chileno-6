@@ -19,6 +19,18 @@ table {
     /* Oculta todo lo que sobresalga de la curva del borde */
 }
 
+/* Clase de utilidad para accesibilidad (ocultar captions sin display:none) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
 /* Estilos para encabezados de tabla (títulos de columnas) */
 th {
     background-color: #5e0b0b;
@@ -39,7 +51,7 @@ th {
 
 /* Estilos para celdas de datos */
 td {
-    padding: 12px 15px;
+    padding: 16px 20px;
     /* Espaciado interno, arriba/abajo y lados */
     border-bottom: 1px solid #eeeeee;
     /* Línea separadora sutil en gris claro */
