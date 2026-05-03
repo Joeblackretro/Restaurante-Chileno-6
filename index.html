@@ -513,17 +513,18 @@
         }
 
         main {
-            background-color: #ffffff;
-            /* Background */
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.50) 0%, rgba(253, 246, 237, 0.40) 100%);
+            /* Transparencia ajustada para mantener legibilidad y ver el fondo */
+            /* Se eliminó el filtro de desenfoque (blur) para que las figuras se vean 100% nítidas */
             margin: 40px auto;
             /* Margin: Separación externa */
             padding: 40px 50px;
             /* Padding: Separación interna amplia */
-            border: 1px solid #e4e4e4;
-            /* Border */
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            /* Sombra elegante para toda la caja */
+            border: 1px solid rgba(201, 154, 46, 0.6);
+            /* Borde con tono dorado un poco más fuerte para que no se pierda la forma del cuadro */
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+            /* Sombra elegante y un leve resplandor interior */
             width: 90%;
             max-width: 1100px;
             box-sizing: border-box;
